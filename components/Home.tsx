@@ -3,35 +3,28 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="bg-dark text-white">
+      
       {/* Header */}
       <header className="fixed top-0 left-0 w-full z-50 bg-dark/70 backdrop-blur-sm flex justify-between items-center px-4 py-3">
+        <h1 className="text-gold font-bold text-lg">Eventos VIP</h1>
         <button className="text-white">☰</button>
-        <h1 className="text-gold font-bold text-2xl">LONU</h1>
-        <button className="text-white">🛒</button>
       </header>
 
       {/* Hero */}
-      <section className="relative h-[100dvh] flex items-center justify-center text-center px-4 overflow-hidden">
-        <div className="absolute inset-0 animate-horizontal-slide w-[110%]">
-          <Image
-            src="/hero.jpg"
-            alt="Evento"
+      <section className="relative h-[90vh] flex items-center justify-center text-center px-4">
+        <div className="absolute inset-0">
+          <Image 
+            src="/hero.jpg" 
+            alt="Evento" 
             fill
-            className="opacity-40 object-cover"
+            className="object-cover opacity-40"
             priority
           />
         </div>
-        <div className="relative z-10 w-full flex flex-col">
-          <h2 className="text-7xl font-bold mb-2 text-gold text-left">
-            Hacemos tu evento único
-          </h2>
-          <p className="text-light mb-10 pl-2 text-left w-3/4 ">
-            Servicios premium para que tu celebración sea inolvidable
-          </p>
-          <a
-            href="#cotizacion"
-            className="bg-primary text-white  py-3 rounded-full font-semibold w-full align-left"
-          >
+        <div className="relative z-10">
+          <h2 className="text-4xl font-bold mb-2 text-gold">Hacemos tu evento único</h2>
+          <p className="text-light mb-6">Servicios premium para que tu celebración sea inolvidable</p>
+          <a href="#cotizacion" className="bg-primary text-white px-6 py-3 rounded-full font-semibold">
             Cotizá tu evento
           </a>
         </div>
@@ -39,19 +32,16 @@ export default function Home() {
 
       {/* Categorías */}
       <section className="px-4 py-12 grid grid-cols-2 gap-4">
-        {["Barra", "DJs", "Toldos", "Carpas", "Decoracion"].map((cat) => (
-          <div
-            key={cat}
-            className="relative h-32 rounded-lg overflow-hidden group"
-          >
-            <Image
-              src={`/${cat.toLowerCase()}.jpg`}
-              alt={cat}
+        {["Barra", "DJs", "Toldos", "Carpas", "Decoración"].map(cat => (
+          <div key={cat} className="relative h-32 rounded-lg overflow-hidden group">
+            <Image 
+              src={`/${cat.toLowerCase()}.jpg`} 
+              alt={cat} 
               fill
               className="object-cover group-hover:scale-105 transition-transform"
             />
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <span className="text-white font-semibold text-xl">{cat}</span>
+              <span className="text-white font-semibold">{cat}</span>
             </div>
           </div>
         ))}
@@ -59,9 +49,7 @@ export default function Home() {
 
       {/* Por qué elegirnos */}
       <section className="bg-grayDark py-12 px-4 text-center">
-        <h3 className="text-2xl font-bold mb-8 text-gold">
-          ¿Por qué elegirnos?
-        </h3>
+        <h3 className="text-2xl font-bold mb-8 text-gold">¿Por qué elegirnos?</h3>
         <div className="grid gap-6">
           <div>
             <span className="text-primary text-4xl">⭐</span>
@@ -81,21 +69,16 @@ export default function Home() {
       {/* CTA intermedio */}
       <section className="relative py-16 text-center">
         <div className="absolute inset-0">
-          <Image
-            src="/cta.jpg"
-            alt="Reserva tu evento"
+          <Image 
+            src="/cta.jpg" 
+            alt="Reserva tu evento" 
             fill
             className="object-cover opacity-30"
           />
         </div>
         <div className="relative z-10">
-          <h3 className="text-2xl font-bold mb-4">
-            ¡Reservá tu fecha hoy mismo!
-          </h3>
-          <a
-            href="#cotizacion"
-            className="bg-primary px-6 py-3 rounded-full font-semibold"
-          >
+          <h3 className="text-2xl font-bold mb-4">¡Reservá tu fecha hoy mismo!</h3>
+          <a href="#cotizacion" className="bg-primary px-6 py-3 rounded-full font-semibold">
             Solicitar cotización
           </a>
         </div>
@@ -105,20 +88,9 @@ export default function Home() {
       <section id="cotizacion" className="px-4 py-12">
         <h3 className="text-2xl font-bold mb-6 text-gold">Cotización rápida</h3>
         <form className="flex flex-col gap-4">
-          <input
-            type="text"
-            placeholder="Nombre"
-            className="p-3 rounded bg-grayDark border border-gray-700"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="p-3 rounded bg-grayDark border border-gray-700"
-          />
-          <input
-            type="date"
-            className="p-3 rounded bg-grayDark border border-gray-700"
-          />
+          <input type="text" placeholder="Nombre" className="p-3 rounded bg-grayDark border border-gray-700" />
+          <input type="email" placeholder="Email" className="p-3 rounded bg-grayDark border border-gray-700" />
+          <input type="date" className="p-3 rounded bg-grayDark border border-gray-700" />
           <select className="p-3 rounded bg-grayDark border border-gray-700">
             <option>Servicio requerido</option>
             <option>Barra</option>
@@ -127,9 +99,7 @@ export default function Home() {
             <option>Carpas</option>
             <option>Decoración</option>
           </select>
-          <button className="bg-primary py-3 rounded font-semibold">
-            Enviar
-          </button>
+          <button className="bg-primary py-3 rounded font-semibold">Enviar</button>
         </form>
       </section>
 
@@ -141,6 +111,7 @@ export default function Home() {
           <a href="#">WhatsApp</a>
         </div>
       </footer>
+
     </main>
   );
 }
